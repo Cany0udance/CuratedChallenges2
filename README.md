@@ -23,3 +23,6 @@ Some challenges may not show up on the challenges list until a prerequisite chal
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8f27fd34-e1f1-4eaf-9d96-d618729eb8a6" />
 
 Please keep in mind this is just the initial release of the mod. I plan on adding more challenges, more features, and framework that would make it easy for other modders to add their OWN curated challenges.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3d0875cb-2861-4dfc-8fb0-011de26df59d" />
+
