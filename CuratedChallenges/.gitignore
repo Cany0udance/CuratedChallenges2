@@ -1,0 +1,14 @@
+﻿.godot/
+bin/
+/android/
+.git/
+.idea/
+.vs/
+obj/
+publish/
+Properties/
+.editorconfig
+*.import
+*.uid
+*.user
+*.DotSettings.user
