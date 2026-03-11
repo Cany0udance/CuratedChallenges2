@@ -26,3 +26,7 @@ Please keep in mind this is just the initial release of the mod. I plan on addin
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3d0875cb-2861-4dfc-8fb0-011de26df59d" />
 
+## Installation instructions
+1. If there isn't already a `mods` folder located at `C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2` (or wherever your file path equivalent is), make one.
+2. Put the latest release of this mod's .pck and .dll file in that folder.
+3. Launch the game. Note that launching the game for the first time created new "modded" save folders, this is intentional and your unmodded saves have not been wiped.
