@@ -29,6 +29,11 @@ public static class ChallengeRegistry
         return _challenges.TryGetValue(id, out var challenge) ? challenge : null;
     }
     
+    public static IEnumerable<ChallengeDefinition> GetAll()
+    {
+        return _challenges.Values;
+    }
+    
     public static IEnumerable<ChallengeDefinition> GetChallengesForCharacter(ModelId characterId)
     {
         return _challenges.Values.Where(c => 

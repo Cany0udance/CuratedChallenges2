@@ -304,8 +304,8 @@ public override void _Ready()
             acts,
             modifiers,
             seed,
-            _ascensionPanel.Ascension,
-            null
+            GameMode.Custom,
+            _ascensionPanel.Ascension
         );
         
         CleanUpLobby();

@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2\mods\&quot; /Y" />
+      <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2\mods\CuratedChallenges\&quot;" />
     </Target>
 
 </Project>

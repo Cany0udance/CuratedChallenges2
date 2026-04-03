@@ -18,6 +18,7 @@ using CuratedChallenges.Patches.SpecificChallenges.TheRoost;
 using CuratedChallenges.Patches.SpecificChallenges.UltimateForm;
 using CuratedChallenges.Patches.SpecificChallenges.VakuuTakeTheWheel;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -41,6 +42,10 @@ public class ChallengesInitializer
         {
             RegisterChallenges();
             ChallengeRegistry.MarkInitialized();
+            ChallengeRegistry.OnRegistryReady += () =>
+            {
+                ChallengesLocTablePatch.PopulateChallengeTranslations(LocManager.Instance);
+            };
         }
         catch (Exception e)
         {
