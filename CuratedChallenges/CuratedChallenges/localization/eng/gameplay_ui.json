@@ -1,0 +1,68 @@
+{
+  "CHALLENGE_BLINDBOT_TITLE": "Blindbot",
+  "CHALLENGE_BLINDBOT_SPECIAL_RULES": "You can't see enemy intents.",
+  "CHALLENGE_BLINDBOT_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_POWER_SURGE_TITLE": "Power Surge",
+  "CHALLENGE_POWER_SURGE_SPECIAL_RULES": "Powers are afflicted with Galvanic.",
+  "CHALLENGE_POWER_SURGE_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_BATTLE_SCARS_TITLE": "Battle Scars",
+  "CHALLENGE_BATTLE_SCARS_SPECIAL_RULES": "At the end of combat, if you have 50% or less HP, add a [gold]Wound[/gold] into your [gold]Deck.[/gold] \n Whenever you Rest at a Rest Site, a random Wound in your Deck becomes an Infection.",
+  "CHALLENGE_BATTLE_SCARS_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_CURSED_COMBO_TITLE": "Cursed Combo",
+  "CHALLENGE_CURSED_COMBO_SPECIAL_RULES": "At the start of Act 2, obtain Runic Pyramid.",
+  "CHALLENGE_CURSED_COMBO_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_THE_ROOST_TITLE": "The Roost",
+  "CHALLENGE_THE_ROOST_SPECIAL_RULES": "Hatching at a Rest Site only hatches a single Byrdonis Egg rather than all of them.",
+  "CHALLENGE_THE_ROOST_WIN_CONDITIONS": "Defeat the Act 3 boss OR \n Obtain 5 Byrdpips.",
+
+  "CHALLENGE_VERY_CURSED_COMBO_TITLE": "Very Cursed Combo",
+  "CHALLENGE_VERY_CURSED_COMBO_SPECIAL_RULES": "This challenge is hidden until the completion of the [gold]Cursed Combo[/gold] challenge. \n At the start of Act 2, obtain Runic Pyramid.",
+  "CHALLENGE_VERY_CURSED_COMBO_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_HARD_CARRY_TITLE": "Hard Carry",
+  "CHALLENGE_HARD_CARRY_SPECIAL_RULES": "Start with 1 Max HP.",
+  "CHALLENGE_HARD_CARRY_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_SNECKROBINDER_TITLE": "Sneckrobinder",
+  "CHALLENGE_SNECKROBINDER_SPECIAL_RULES": "ALL 0 and 1 cost cards in card rewards are Enchanted with [purple]Slither[/purple].",
+  "CHALLENGE_SNECKROBINDER_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_FAST_TRACK_TITLE": "Fast Track",
+  "CHALLENGE_FAST_TRACK_SPECIAL_RULES": "Skip Act 1 entirely. \n Start with 3 Cure All potions.",
+  "CHALLENGE_FAST_TRACK_WIN_CONDITIONS": "Defeat the Act 2 boss.",
+
+  "CHALLENGE_SHOOTING_STAR_TITLE": "Shooting Star",
+  "CHALLENGE_SHOOTING_STAR_SPECIAL_RULES": "At the start of each combat, play a Bombardment. \n Bombardment can hit ANYONE.",
+  "CHALLENGE_SHOOTING_STAR_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_HOT_POTATO_TITLE": "Hot Potato",
+  "CHALLENGE_HOT_POTATO_SPECIAL_RULES": "Start with 3 Gambler's Brew potions. \n Whenever a Curse is Exhausted, lose 20 Max HP.",
+  "CHALLENGE_HOT_POTATO_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_BURN_BRIGHT_TITLE": "Burn Bright",
+  "CHALLENGE_BURN_BRIGHT_SPECIAL_RULES": "[gold]Toy Box[/gold] does not provide Relics upon pickup and will not expire. \n Whenever you obtain a Relic, it becomes wax.",
+  "CHALLENGE_BURN_BRIGHT_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_SPLIT_PERSONALITY_TITLE": "Split Personality",
+  "CHALLENGE_SPLIT_PERSONALITY_SPECIAL_RULES": "Enemies drop 1 less card reward. \n Obtain a Sea Glass from another character after each Ancient.",
+  "CHALLENGE_SPLIT_PERSONALITY_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_ULTIMATE_FORM_TITLE": "Ultimate Form",
+  "CHALLENGE_ULTIMATE_FORM_SPECIAL_RULES": "Ancients heal 0% of your missing HP.",
+  "CHALLENGE_ULTIMATE_FORM_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_VAKUU_TAKE_THE_PRISMATIC_WHEEL_TITLE": "Vakuu Take The Prismatic Wheel",
+  "CHALLENGE_VAKUU_TAKE_THE_PRISMATIC_WHEEL_SPECIAL_RULES": "This challenge is hidden until the completion of the [gold]Vakuu Take The Wheel[/gold] challenge. \n Vakuu plays EVERY turn for you.",
+  "CHALLENGE_VAKUU_TAKE_THE_PRISMATIC_WHEEL_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "CHALLENGE_VAKUU_TAKE_THE_WHEEL_TITLE": "Vakuu Take The Wheel",
+  "CHALLENGE_VAKUU_TAKE_THE_WHEEL_SPECIAL_RULES": "Vakuu plays EVERY turn for you.",
+  "CHALLENGE_VAKUU_TAKE_THE_WHEEL_WIN_CONDITIONS": "Defeat the Act 3 boss.",
+
+  "VAKUU_AUTO_END_TITLE": "Automatically End Turn",
+  "VAKUU_AUTO_END_DESCRIPTION": "If enabled, Vakuu will automatically end your turn after he is unable to play any more cards."
+}
