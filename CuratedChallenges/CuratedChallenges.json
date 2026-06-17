@@ -1,0 +1,14 @@
+{
+  "id": "CuratedChallenges",
+  "name": "Curated Challenges",
+  "author": "Cany0udance",
+  "description": "Adds challenge runs to the game.",
+  "version": "1.0.4",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [
+    { "id": "BaseLib", "min_version": "v3.2.1" }
+  ],
+  "affects_gameplay": true,
+  "min_game_version": "0.107.0"
+}
