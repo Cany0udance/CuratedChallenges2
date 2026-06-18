@@ -23,9 +23,9 @@ public class SneckrobinderChallenge : ChallengeDefinition
     
         for (int i = 0; i < 3; i++)
             deck.Add(ModelDb.Card<DefendNecrobinder>());
-    
+        
         for (int i = 0; i < 2; i++)
-            deck.Add(ModelDb.Card<BorrowedTime>());
+            deck.Add(ModelDb.Card<Invoke>());
     
         deck.Add(ModelDb.Card<Bodyguard>());
         

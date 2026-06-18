@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
+using BaseLib.Extensions;
 using CuratedChallenges.ChallengeUtil;
+using CuratedChallenges.CuratedChallengesCode;
 using CuratedChallenges.Panels;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
@@ -7,6 +9,7 @@ using MegaCrit.Sts2.Core.ControllerInput;
 using MegaCrit.Sts2.Core.Entities.UI;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Logging;
+using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Acts;
 using MegaCrit.Sts2.Core.Multiplayer;
@@ -282,24 +285,20 @@ public partial class NChallengesScreen : NSubmenu, ICharacterSelectButtonDelegat
     private async Task StartChallengeRun()
     {
         ChallengeModifier.IsStartingChallengeRun = true;
+        VakuuAutoEndState.Reset();
         NAudioManager.Instance?.StopMusic();
-        
+    
         SfxCmd.Play(_selectedCharacter.CharacterTransitionSfx);
         await NGame.Instance.Transition.FadeOut(transitionPath: _selectedCharacter.CharacterSelectTransitionPath);
-        
+    
         var challengeModifier = _selectedChallenge.CreateModifier();
         var modifiers = new List<ModifierModel> { challengeModifier };
-        
+    
         string seed = _lobby.Seed ?? SeedHelper.GetRandomSeed();
-        
-        List<ActModel> acts = ActModel.GetDefaultList().ToList();
-        
         var rng = new Rng((uint)StringHelper.GetDeterministicHashCode(seed));
-        if (rng.NextBool())
-        {
-            acts[0] = ModelDb.Act<Underdocks>();
-        }
-        
+    
+        var acts = GetRandomActs(rng);
+    
         await NGame.Instance.StartNewSingleplayerRun(
             _selectedCharacter,
             true,
@@ -309,8 +308,48 @@ public partial class NChallengesScreen : NSubmenu, ICharacterSelectButtonDelegat
             GameMode.Custom,
             _ascensionPanel.Ascension
         );
-        
+    
         CleanUpLobby();
+    }
+    
+    private static List<ActModel> GetRandomActs(Rng rng)
+    {
+        var acts = new List<ActModel>();
+    
+        MethodInfo getWeightedAct = null;
+    
+        var actTogglerMod = ModManager.GetLoadedMods()
+            .FirstOrDefault(m => m.manifest?.id == "ActToggler");
+    
+        if (actTogglerMod?.assembly != null)
+        {
+            var actTogglerType = actTogglerMod.assembly
+                .GetType("ActToggler.ActTogglerCode.ActTogglerConfig");
+            getWeightedAct = actTogglerType?.GetMethod("GetWeightedAct",
+                BindingFlags.Public | BindingFlags.Static);
+        }
+    
+        for (int slot = 1; slot <= 3; slot++)
+        {
+            if (getWeightedAct != null)
+            {
+                var act = (ActModel)getWeightedAct.Invoke(null, new object[] { slot, rng });
+                acts.Add(act);
+            }
+            else
+            {
+                var available = ModelDb.Acts
+                    .Where(a => a.ActNumber() == slot)
+                    .ToList();
+            
+                if (available.Count > 0)
+                {
+                    acts.Add(available[rng.NextInt(available.Count)]);
+                }
+            }
+        }
+    
+        return acts;
     }
     
     private void CleanUpLobby()
@@ -334,7 +373,7 @@ public partial class NChallengesScreen : NSubmenu, ICharacterSelectButtonDelegat
         
         LoadChallengesForCharacter(characterModel);
         _ascensionPanel.SetMaxAscension(10);
-        _ascensionPanel.SetAscensionLevel(0);
+        _ascensionPanel.SetAscensionLevel(CuratedChallengesConfig.DefaultAscension);
         _ascensionPanel.Visible = false;
     }
     

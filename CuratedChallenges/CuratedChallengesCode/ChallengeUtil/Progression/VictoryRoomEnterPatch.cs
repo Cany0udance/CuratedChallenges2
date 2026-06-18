@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using CuratedChallenges.CuratedChallengesCode;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models.Events;
@@ -46,13 +47,13 @@ public class VictoryTriggeredPatch
         }
         
         int ascension = runState.AscensionLevel;
-        
-        var data = ChallengeDataManager.GetData();
-        if (!data.CompletedChallenges.TryGetValue(storageKey, out int highestAscension) 
+
+        var completed = CuratedChallengesConfig.GetCompletedChallenges();
+        if (!completed.TryGetValue(storageKey, out int highestAscension)
             || ascension > highestAscension)
         {
-            data.CompletedChallenges[storageKey] = ascension;
-            ChallengeDataManager.SaveData();
+            completed[storageKey] = ascension;
+            CuratedChallengesConfig.SaveCompletedChallenges();
         }
     }
 }

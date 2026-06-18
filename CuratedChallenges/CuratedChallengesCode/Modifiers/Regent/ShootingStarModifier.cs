@@ -15,16 +15,18 @@ public ShootingStarModifier() : base() { }
     
     public ShootingStarModifier(ChallengeDefinition challenge) : base(challenge) { }
     
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterAutoPrePlayPhaseEnteredLate(
+        PlayerChoiceContext choiceContext, 
+        Player player)
     {
         if (player.Creature.CombatState.RoundNumber != 1)
             return;
-        
+
         CardModel bombardment = player.Creature.CombatState.CreateCard(
-            ModelDb.Card<Bombardment>(), 
+            ModelDb.Card<Bombardment>(),
             player
         );
-        
-        await CardCmd.AutoPlay(choiceContext, bombardment, (Creature) null);
+
+        await CardCmd.AutoPlay(choiceContext, bombardment, (Creature)null);
     }
 }

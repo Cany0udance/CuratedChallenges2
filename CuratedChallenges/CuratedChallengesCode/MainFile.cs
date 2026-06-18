@@ -1,3 +1,4 @@
+using BaseLib.Config;
 using CuratedChallenges.Challenges;
 using CuratedChallenges.Challenges.Defect;
 using CuratedChallenges.Challenges.Regent;
@@ -45,6 +46,8 @@ public partial class MainFile : Node
         catch (Exception e)
         {
         }
+        
+        ModConfigRegistry.Register(ModId, new CuratedChallengesConfig());
     }
     
     private static void RegisterChallenges()

@@ -1,4 +1,5 @@
 ﻿using CuratedChallenges.ChallengeUtil.Progression;
+using CuratedChallenges.CuratedChallengesCode;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 
@@ -77,14 +78,12 @@ public abstract class ChallengeDefinition
     
     private static bool IsPrerequisiteCompletedByAny(string challengeId)
     {
-        var data = ChallengeDataManager.GetData();
-        
-        // Check direct completion
-        if (data.CompletedChallenges.ContainsKey(challengeId))
+        var completed = CuratedChallengesConfig.GetCompletedChallenges();
+
+        if (completed.ContainsKey(challengeId))
             return true;
-        
-        // Check character-specific completions (for shared challenges stored as "id_character")
-        return data.CompletedChallenges.Keys.Any(k => k.StartsWith(challengeId + "_"));
+
+        return completed.Keys.Any(k => k.StartsWith(challengeId + "_"));
     }
     
     public abstract ModifierModel CreateModifier();
