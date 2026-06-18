@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using MegaCrit.Sts2.Core.Saves;
 
 namespace CuratedChallenges.ChallengeUtil.Progression;
 
