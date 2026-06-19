@@ -23,7 +23,7 @@ public class UltimateFormChallenge : ChallengeDefinition
                 // Starter card upgrades from VibrantHalo
                 { ModelDb.Card<Bash>().Id, (CardModel)ModelDb.Card<Break>() },
                 { ModelDb.Card<Neutralize>().Id, (CardModel)ModelDb.Card<Suppress>() },
-                { ModelDb.Card<Bodyguard>().Id, (CardModel)ModelDb.Card<Protector>() },
+                { ModelDb.Card<Unleash>().Id, (CardModel)ModelDb.Card<Protector>() },
                 { ModelDb.Card<FallingStar>().Id, (CardModel)ModelDb.Card<MeteorShower>() },
                 { ModelDb.Card<Dualcast>().Id, (CardModel)ModelDb.Card<Quadcast>() }
             };

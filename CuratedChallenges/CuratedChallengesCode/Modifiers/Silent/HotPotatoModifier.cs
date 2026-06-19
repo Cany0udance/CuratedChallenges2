@@ -30,7 +30,7 @@ public HotPotatoModifier() : base() { }
         if (player?.Creature == null)
             return;
         
-        // Lose 20 max HP
-        await CreatureCmd.LoseMaxHp(choiceContext, player.Creature, 20, true);
+        // Lose 10 max HP
+        await CreatureCmd.LoseMaxHp(choiceContext, player.Creature, 10, true);
     }
 }

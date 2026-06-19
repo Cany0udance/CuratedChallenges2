@@ -19,10 +19,11 @@ public class HotPotatoChallenge : ChallengeDefinition
     {
         var deck = new List<CardModel>();
     
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
             deck.Add(ModelDb.Card<StrikeSilent>());
     
-        deck.Add(ModelDb.Card<DaggerThrow>());
+        for (int i = 0; i < 2; i++)
+            deck.Add(ModelDb.Card<DaggerThrow>());
     
         for (int i = 0; i < 4; i++)
             deck.Add(ModelDb.Card<DefendSilent>());
